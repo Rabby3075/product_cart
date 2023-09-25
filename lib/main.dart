@@ -35,7 +35,7 @@ class _ProductState extends State<Product> {
     {"name": "Product 6", "Price": "\$75.5", "count": 0},
   ];
   int getTotalItemCount() {
-    return items.fold(0, (total, item) => total + (item['count'] as num).toInt());
+    return items.where((item) => item['count'] > 0).length;
   }
 
   @override
